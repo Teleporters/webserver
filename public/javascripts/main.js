@@ -71,7 +71,6 @@ if(isWebGLAvailable) {
   cam.rotation.set(0, 0, 0);
 
   World.add(skydome);
-  World.start();
 
   var hammertime = new Hammer(World.getRenderer().domElement, {});
 
@@ -88,6 +87,7 @@ if(isWebGLAvailable) {
 
   World.getRenderer().domElement.addEventListener('touchstart', function(e) { e.preventDefault(); }, true);
   document.querySelector('img').addEventListener('load', function() {
+    World.start();
     start(this);
     document.querySelector('canvas').style.display = 'block';
   })
@@ -104,7 +104,7 @@ if(isWebGLAvailable) {
 
 function start(img) {
   window.scrollTo( 0, 0 );
-
+  console.log('Starting..')
   if((typeof img) === 'string') material.map = THREE.ImageUtils.loadTexture(img);
   else {
     var tex = new THREE.Texture(undefined, THREE.UVMapping);
@@ -113,6 +113,7 @@ function start(img) {
     tex.needsUpdate = true;
     material.map = tex;
     material.needsUpdate = true;
+    console.log('initialised.')
     document.querySelector('img').style.display = 'none';
     document.querySelector('canvas').style.display = 'block';
     document.querySelector('.loading').style.display = 'none';
