@@ -8,6 +8,7 @@ html(prefix="og: http://ogp.me/ns#", lang="en")
       | html, body {
       |   padding: 0;
       |   margin:  0;
+      |   font-family: sans-serif;
       | }
       | img {
       |   margin:  0;
@@ -25,11 +26,21 @@ html(prefix="og: http://ogp.me/ns#", lang="en")
       |   text-align: center;
       |   background: #c00;
       |   color: white;
-      |   font-family: sans-serif;
       | }
       | .content {
       |   font-size: 1.2em;
       |   font-weight: bold;
+      | }
+      | .loading {
+      |   position: absolute;
+      |   width: 100%;
+      |   height: 2em;
+      |   padding: 0.5em 0.5em 0 0.5em;
+      |   text-align: center;
+      |   background:rgb( 255, 255, 255);
+      |   background:rgba(255, 255, 255, 0.8);
+      |   font-weight: bold;
+      |   font-size: 2em;
       | }
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
@@ -48,7 +59,5 @@ html(prefix="og: http://ogp.me/ns#", lang="en")
 
   body
     block content
-    script
-      | window.imageUrl = "#{imageUrl}";
     script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js")
     script(type="text/javascript", src="javascripts/app.js")

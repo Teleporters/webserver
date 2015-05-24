@@ -88,7 +88,6 @@ if(isWebGLAvailable) {
 
   World.getRenderer().domElement.addEventListener('touchstart', function(e) { e.preventDefault(); }, true);
   document.querySelector('img').addEventListener('load', function() {
-    console.log('loaded');
     start(this);
     document.querySelector('canvas').style.display = 'block';
   })
@@ -116,6 +115,7 @@ function start(img) {
     material.needsUpdate = true;
     document.querySelector('img').style.display = 'none';
     document.querySelector('canvas').style.display = 'block';
+    document.querySelector('.loading').style.display = 'none';
   }
 
   vrmgr.hideButton = false;
