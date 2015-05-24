@@ -37,7 +37,7 @@ var onRender = function() {
 }
 
 // Allow cross-origin texture loading
-THREE.ImageUtils.crossOrigin = '';
+THREE.ImageUtils.crossOrigin = 'Anonymous';
 
 var material = new THREE.MeshBasicMaterial({wireframe: false, side: THREE.BackSide}),
     skydome  = new THREE.Mesh(new THREE.SphereGeometry(100, 64, 64), material),
