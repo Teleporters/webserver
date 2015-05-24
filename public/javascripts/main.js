@@ -93,7 +93,7 @@ if(isWebGLAvailable) {
     document.querySelector('canvas').style.display = 'block';
   })
 } else {
-  // TODO: Show a message that it doesn't support WebGL
+  document.querySelector('img').style.width = '100%';
   document.querySelector('.warning').style.display = 'block';
   if(typeof ga !== 'undefined') ga('set', 'dimension1', 'No');
   if(typeof keen !== 'undefined') keen.addEvent('webgl', {supported: 'No'});
